@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import json5 from 'json5'
 import { hideEmptyKeys, hideLocationData, loading } from '#imports'
+import { Message } from '@arco-design/web-vue'
 
 const IS_SAFARI = /Apple Computer/.test(globalThis.navigator?.vendor)
 
@@ -58,33 +59,27 @@ function stringifyError(error: unknown) {
 }
 
 function print() {
+  Message.success('请在控制台查看')
   // eslint-disable-next-line no-console
   console.info(ast.value)
 }
 </script>
 
 <template>
-  <div flex="~ col gap-2 1" min-w-0>
-    <div flex="~ gap-3 wrap" items-center>
-      <label>
-        <input v-model="hideEmptyKeys" type="checkbox" /> Hide empty keys
-      </label>
-      <label>
-        <input v-model="hideLocationData" type="checkbox" /> Hide location data
-      </label>
-      <label>
-        Hide keys:
-        <input
-          v-model="hideKeysValue"
-          type="input"
-          border="~ $c-border"
-          rounded
-          p1
-        />
-      </label>
-      <button border rounded px2 py1 hover:border-emerald @click="print">
-        Print in console
-      </button>
+  <div w-full h-full flex style="flex-direction: column">
+    <div flex items-center p-1em>
+      <a-form :layout="'inline'" :model="{}">
+        <a-form-item label=" Hide empty keys">
+          <a-checkbox v-model="hideEmptyKeys" />
+        </a-form-item>
+        <a-form-item label="Hide location data">
+          <a-checkbox v-model="hideLocationData" />
+        </a-form-item>
+        <a-form-item label=" Hide keys:">
+          <a-input v-model="hideKeysValue" />
+        </a-form-item>
+        <a-button @click="print" type="primary"> 控制台输出 </a-button>
+      </a-form>
     </div>
     <div flex="~ 1" min-h-0 min-w-0>
       <div v-if="loading === 'load'">Loading parser...</div>

@@ -15,6 +15,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@arco-design/web-vue": "^2.51.0",
     "fflate": "^0.8.0",
     "json5": "^2.2.3",
     "monaco-editor": "^0.41.0"
@@ -38,6 +39,7 @@
     "nuxt": "3.7.0",
     "nuxt-monaco-editor": "^1.2.3",
     "onigasm": "^2.2.5",
+    "sass": "^1.66.1",
     "serve": "^14.2.1",
     "tsx": "^3.12.8",
     "typescript": "^5.2.2",

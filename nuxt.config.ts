@@ -21,6 +21,10 @@ export default defineNuxtConfig({
     define: {
       'process.env': JSON.stringify({}),
     },
+    server: {
+      host: "0.0.0.0",
+      port: 3000,
+    },
   },
   css: [
     '@unocss/reset/tailwind.css',
