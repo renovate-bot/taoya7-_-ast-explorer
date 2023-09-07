@@ -15,7 +15,14 @@ function handleDialogClick(evt: MouseEvent) {
 <template>
   <div flex items-center justify-center>
     <button class="i-ri:settings-line" @click="openDialog" />
-    <dialog ref="dialog" h-50vh rounded p0 @click="handleDialogClick">
+    <dialog
+      ref="dialog"
+      min-w="50vw"
+      h-50vh
+      rounded
+      p0
+      @click="handleDialogClick"
+    >
       <div py2 text-center text-lg font-bold>
         Parser Options
         <button

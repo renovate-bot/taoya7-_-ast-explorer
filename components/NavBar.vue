@@ -14,7 +14,7 @@
 
     <div flex="~ gap-3">
       <span font-mono text-gray>{{ parserVersion }}</span>
-      <button @click="toggleDark">
+      <button @click="toggleDark" v-if="false">
         <div i-ri:sun-line dark:i-ri:moon-line />
       </button>
     </div>
